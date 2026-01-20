@@ -101,28 +101,31 @@ export function EmployeeDashboard() {
   }>({
     address: { x: 100, y: 100, width: 600, height: 600 },
     contractor: {
-      x: 50,
-      y: 30,
-      width: 1200,
-      height: 850,
+      x: 20,
+      y: 20,
+      width: 1600,
+      height: 900,
     },
   })
 
   // Center windows on mount (client-side only)
   useEffect(() => {
     if (typeof window !== "undefined") {
+      const contractorWidth = Math.min(window.innerWidth * 0.95, 1800)
+      const contractorHeight = Math.min(window.innerHeight * 0.95, 950)
+
       setWindowPositions({
-        address: { 
-          x: window.innerWidth / 2 - 300, 
-          y: window.innerHeight / 2 - 300, 
-          width: 600, 
-          height: 600 
+        address: {
+          x: window.innerWidth / 2 - 300,
+          y: window.innerHeight / 2 - 300,
+          width: 600,
+          height: 600
         },
         contractor: {
-          x: window.innerWidth / 2 - 400,
-          y: window.innerHeight / 2 - 350,
-          width: 800,
-          height: Math.min(window.innerHeight * 0.9, 700),
+          x: (window.innerWidth - contractorWidth) / 2,
+          y: (window.innerHeight - contractorHeight) / 2,
+          width: contractorWidth,
+          height: contractorHeight,
         },
       })
     }
@@ -4008,27 +4011,27 @@ export function EmployeeDashboard() {
             </div>
 
             {/* Content area - scrollable */}
-            <div className="flex-1 overflow-auto p-6">
+            <div className="flex-1 overflow-auto p-8">
               {/* Mode toggle and dropdowns */}
-              <div className="space-y-4 mb-6">
-                <div className="flex flex-col lg:flex-row items-stretch lg:items-end gap-4">
-                  <div className="flex-1">
-                    <label className="block text-sm font-medium mb-2 text-slate-900 dark:text-slate-100">Тип Лице</label>
+              <div className="space-y-6 mb-8">
+                <div className="flex flex-col lg:flex-row items-stretch lg:items-end gap-6">
+                  <div className="flex-1 min-w-[250px]">
+                    <label className="block text-base font-medium mb-3 text-slate-900 dark:text-slate-100">Тип Лице</label>
                     <select
                       value={newContractorData.type}
                       onChange={(e) => setNewContractorData({ ...newContractorData, type: e.target.value })}
-                      className="w-full px-4 py-2.5 border-2 border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-sm shadow-sm"
+                      className="w-full px-4 py-3 border-2 border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-base shadow-sm hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                     >
                       <option value="Физическо лице">Физическо лице</option>
                       <option value="Юридическо лице">Юридическо лице</option>
                     </select>
                   </div>
-                  <div className="flex-1">
-                    <label className="block text-sm font-medium mb-2 text-slate-900 dark:text-slate-100">Държава</label>
+                  <div className="flex-1 min-w-[250px]">
+                    <label className="block text-base font-medium mb-3 text-slate-900 dark:text-slate-100">Държава</label>
                     <select
                       value={newContractorData.country}
                       onChange={(e) => setNewContractorData({ ...newContractorData, country: e.target.value })}
-                      className="w-full px-4 py-2.5 border-2 border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-sm shadow-sm"
+                      className="w-full px-4 py-3 border-2 border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-base shadow-sm hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                     >
                       {countries.map((country) => (
                         <option key={country.code} value={country.name}>
@@ -4038,9 +4041,8 @@ export function EmployeeDashboard() {
                     </select>
                   </div>
                   <div className="flex items-end">
-                    <div className="inline-flex rounded-lg border-2 border-slate-300 dark:border-slate-600 p-1 bg-slate-50 dark:bg-slate-900">
+                    <div className="inline-flex rounded-xl border-2 border-slate-300 dark:border-slate-600 p-1.5 bg-slate-50 dark:bg-slate-900 shadow-sm">
                       <Button
-                        size="sm"
                         variant="ghost"
                         onClick={() => {
                           setContractorFormMode("short")
@@ -4054,7 +4056,7 @@ export function EmployeeDashboard() {
                             metadata: "short",
                           })
                         }}
-                        className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                        className={`px-6 py-2.5 rounded-lg text-base font-semibold transition-all ${
                           contractorFormMode === "short"
                             ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md"
                             : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
@@ -4063,7 +4065,6 @@ export function EmployeeDashboard() {
                         Кратък режим
                       </Button>
                       <Button
-                        size="sm"
                         variant="ghost"
                         onClick={() => {
                           setContractorFormMode("full")
@@ -4077,7 +4078,7 @@ export function EmployeeDashboard() {
                             metadata: "full",
                           })
                         }}
-                        className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                        className={`px-6 py-2.5 rounded-lg text-base font-semibold transition-all ${
                           contractorFormMode === "full"
                             ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md"
                             : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
@@ -4102,16 +4103,16 @@ export function EmployeeDashboard() {
               ].map((section) => (
                 <div
                   key={section.key}
-                  className="border-2 border-slate-300 dark:border-slate-600 rounded-lg p-5 shadow-md mt-4 bg-slate-50/50 dark:bg-slate-900/30"
+                  className="border-2 border-slate-300 dark:border-slate-600 rounded-xl p-6 shadow-lg mt-6 bg-white/80 dark:bg-slate-900/50 backdrop-blur-sm"
                 >
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-3">
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">{section.title}</h3>
-                    <div className="inline-flex rounded-lg border-2 border-slate-300 dark:border-slate-600 p-0.5 bg-slate-100 dark:bg-slate-900">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-5 gap-4">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">{section.title}</h3>
+                    <div className="inline-flex rounded-lg border-2 border-slate-300 dark:border-slate-600 p-1 bg-slate-100 dark:bg-slate-900 shadow-sm">
                       <Button
                         size="sm"
                         variant="ghost"
                         onClick={() => setSectionModes({ ...sectionModes, [section.key]: "short" })}
-                        className={`px-3 py-1.5 text-xs ${
+                        className={`px-4 py-2 text-sm font-medium rounded-md ${
                           sectionModes[section.key] === "short"
                             ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-sm"
                             : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-800"
@@ -4123,7 +4124,7 @@ export function EmployeeDashboard() {
                         size="sm"
                         variant="ghost"
                         onClick={() => setSectionModes({ ...sectionModes, [section.key]: "full" })}
-                        className={`px-3 py-1.5 text-xs ${
+                        className={`px-4 py-2 text-sm font-medium rounded-md ${
                           sectionModes[section.key] === "full"
                             ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-sm"
                             : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-800"
@@ -4134,55 +4135,55 @@ export function EmployeeDashboard() {
                     </div>
                   </div>
 
-                  <div className="mt-4">
+                  <div className="mt-5">
                     {section.key === "identification" ? (
                       sectionModes[section.key] === "short" ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="Имена"
                             value={contractorFormData.name}
                             onChange={(e) => handleContractorFieldChange("name", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Псевдоним"
                             value={contractorFormData.alias}
                             onChange={(e) => handleContractorFieldChange("alias", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="ЕГН"
                             value={contractorFormData.egn}
                             onChange={(e) => handleContractorFieldChange("egn", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="Имена"
                             value={contractorFormData.name}
                             onChange={(e) => handleContractorFieldChange("name", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Псевдоним"
                             value={contractorFormData.alias}
                             onChange={(e) => handleContractorFieldChange("alias", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="ЕГН"
                             value={contractorFormData.egn}
                             onChange={(e) => handleContractorFieldChange("egn", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             type="date"
                             placeholder="Дата на раждане"
                             value={contractorFormData.birthDate}
                             onChange={(e) => handleContractorFieldChange("birthDate", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       )
@@ -4193,22 +4194,22 @@ export function EmployeeDashboard() {
                             placeholder="ДДС № (VAT ID)"
                             value={contractorFormData.vatId}
                             onChange={(e) => handleContractorFieldChange("vatId", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="ДДС № (VAT ID)"
                             value={contractorFormData.vatId}
                             onChange={(e) => handleContractorFieldChange("vatId", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Друг данъчен идентификатор"
                             value={contractorFormData.otherTaxId}
                             onChange={(e) => handleContractorFieldChange("otherTaxId", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       )
@@ -4218,18 +4219,18 @@ export function EmployeeDashboard() {
                           Няма полета в кратък режим
                         </div>
                       ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="IBAN"
                             value={contractorFormData.iban}
                             onChange={(e) => handleContractorFieldChange("iban", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Валута"
                             value={contractorFormData.currency}
                             onChange={(e) => handleContractorFieldChange("currency", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       )
@@ -4239,104 +4240,104 @@ export function EmployeeDashboard() {
                           Няма полета в кратък режим
                         </div>
                       ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="Организационна форма"
                             value={contractorFormData.organizationalForm}
                             onChange={(e) => handleContractorFieldChange("organizationalForm", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Правен режим"
                             value={contractorFormData.legalStatus}
                             onChange={(e) => handleContractorFieldChange("legalStatus", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Данъчен статут"
                             value={contractorFormData.taxStatus}
                             onChange={(e) => handleContractorFieldChange("taxStatus", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Професионална категория"
                             value={contractorFormData.professionalCategory}
                             onChange={(e) => handleContractorFieldChange("professionalCategory", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       )
                     ) : section.key === "contactInfo" ? (
                       sectionModes[section.key] === "short" ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="Телефон"
                             value={contractorFormData.phone}
                             onChange={(e) => handleContractorFieldChange("phone", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Имейл"
                             value={contractorFormData.email}
                             onChange={(e) => handleContractorFieldChange("email", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="Телефон"
                             value={contractorFormData.phone}
                             onChange={(e) => handleContractorFieldChange("phone", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Тип телефон"
                             value={contractorFormData.phoneType}
                             onChange={(e) => handleContractorFieldChange("phoneType", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Имейл"
                             value={contractorFormData.email}
                             onChange={(e) => handleContractorFieldChange("email", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Предназначение на телефон"
                             value={contractorFormData.phonePurpose}
                             onChange={(e) => handleContractorFieldChange("phonePurpose", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Тип имейл"
                             value={contractorFormData.emailType}
                             onChange={(e) => handleContractorFieldChange("emailType", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Предназначение на имейл"
                             value={contractorFormData.emailPurpose}
                             onChange={(e) => handleContractorFieldChange("emailPurpose", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       )
                     ) : section.key === "addressInfo" ? (
                       /* CHANGE: Updated Адресна информация section with specific fields */
                       sectionModes[section.key] === "short" ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="Населено място"
                             value={contractorFormData.city}
                             onChange={(e) => handleContractorFieldChange("city", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Пощенски код"
                             value={contractorFormData.postalCode}
                             onChange={(e) => handleContractorFieldChange("postalCode", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Адрес"
@@ -4346,54 +4347,54 @@ export function EmployeeDashboard() {
                           />
                         </div>
                       ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="Държава"
                             value={contractorFormData.addressCountry}
                             onChange={(e) => handleContractorFieldChange("addressCountry", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Област"
                             value={contractorFormData.region}
                             onChange={(e) => handleContractorFieldChange("region", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Община"
                             value={contractorFormData.municipality}
                             onChange={(e) => handleContractorFieldChange("municipality", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Населено място"
                             value={contractorFormData.city}
                             onChange={(e) => handleContractorFieldChange("city", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Пощенски код"
                             value={contractorFormData.postalCode}
                             onChange={(e) => handleContractorFieldChange("postalCode", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Адрес"
                             value={contractorFormData.address}
                             onChange={(e) => handleContractorFieldChange("address", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Тип на адреса"
                             value={contractorFormData.addressType}
                             onChange={(e) => handleContractorFieldChange("addressType", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Предназначение на адреса"
                             value={contractorFormData.addressPurpose}
                             onChange={(e) => handleContractorFieldChange("addressPurpose", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Допълнително описание"
@@ -4410,24 +4411,24 @@ export function EmployeeDashboard() {
                           Няма полета в кратък режим
                         </div>
                       ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                           <Input
                             placeholder="Външен идентификатор"
                             value={contractorFormData.externalId}
                             onChange={(e) => handleContractorFieldChange("externalId", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Статус"
                             value={contractorFormData.status}
                             onChange={(e) => handleContractorFieldChange("status", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                           <Input
                             placeholder="Версия"
                             value={contractorFormData.version}
                             onChange={(e) => handleContractorFieldChange("version", e.target.value)}
-                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                            className="border-2 border-slate-300 dark:border-slate-600 shadow-sm h-11 px-4 text-base hover:border-emerald-500 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 transition-all"
                           />
                         </div>
                       )
@@ -4437,16 +4438,16 @@ export function EmployeeDashboard() {
               ))}
 
               {/* Action Buttons */}
-              <div className="flex justify-end gap-3 pt-4 border-t-2 border-slate-300 dark:border-slate-600 mt-4">
+              <div className="flex justify-end gap-4 pt-6 border-t-2 border-slate-300 dark:border-slate-600 mt-8">
                 <Button
                   variant="outline"
                   onClick={() => setAddContractorDialogOpen(false)}
-                  className="border-2 hover:bg-slate-100 dark:hover:bg-slate-700"
+                  className="border-2 hover:bg-slate-100 dark:hover:bg-slate-700 px-8 py-3 text-base font-semibold"
                 >
                   Отказ
                 </Button>
                 <Button
-                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-md"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-lg px-8 py-3 text-base font-semibold"
                   onClick={() => {
                     // Save logic here
                     setAddContractorDialogOpen(false)
