@@ -1089,7 +1089,7 @@ export function EmployeeDashboard() {
       {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-md lg:hidden"
+          className="fixed inset-0 z-40 bg-transparent lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -1807,11 +1807,7 @@ export function EmployeeDashboard() {
   // Contractor Details View
           <main className="flex-1 overflow-y-auto bg-slate-50 dark:bg-slate-900 relative">
             {selectedDocument && (
-              <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30" onClick={closeDocumentDetails} />
-            )}
-            {selectedDocument && (
               <>
-                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30" onClick={closeDocumentDetails} />
                 <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-white dark:bg-slate-800 rounded-xl shadow-2xl border-2 border-slate-300 dark:border-slate-600 z-40 max-h-[90vh] overflow-y-auto">
                   <div className="sticky top-0 bg-white dark:bg-slate-800 px-6 py-4 border-b border-slate-300 dark:border-slate-600 z-10 shadow-sm">
                     <div className="flex items-center justify-between">
@@ -2545,12 +2541,6 @@ export function EmployeeDashboard() {
               </>
             )}
 
-            {addContactPanelOpen && (
-              <div
-                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30"
-                onClick={() => setAddContactPanelOpen(false)}
-              />
-            )}
 
             <div className="max-w-full mx-auto p-3 sm:p-4 space-y-3 sm:space-y-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
@@ -3671,10 +3661,6 @@ export function EmployeeDashboard() {
       </div>
       {showFilteredOrdersPopup && (
         <>
-          <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
-            onClick={() => setShowFilteredOrdersPopup(false)}
-          />
           <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-4xl max-h-[80vh] bg-white dark:bg-slate-800 rounded-lg shadow-2xl border-2 border-slate-300 dark:border-slate-600 overflow-hidden">
             <div className="sticky top-0 bg-white dark:bg-slate-800 border-b-2 border-slate-300 dark:border-slate-600 p-6 z-10">
               <div className="flex items-center justify-between">
@@ -3758,14 +3744,6 @@ export function EmployeeDashboard() {
       {/* Address Panel - similar to Add Contact Panel */}
       {isAddressPanelOpen && (
         <>
-          {/* Backdrop blur overlay */}
-          <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
-            onClick={() => {
-              setIsAddressPanelOpen(false)
-              setEditingAddressIndex(null)
-            }}
-          />
 
           {/* Draggable Window */}
           <div
@@ -3938,11 +3916,6 @@ export function EmployeeDashboard() {
 
       {addContractorDialogOpen && (
         <>
-          {/* Backdrop blur overlay */}
-          <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
-            onClick={() => setAddContractorDialogOpen(false)}
-          />
 
           {/* Draggable Window */}
           <div
