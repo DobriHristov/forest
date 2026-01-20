@@ -1761,32 +1761,32 @@ export function EmployeeDashboard() {
           </main>
 ) : currentView === "clients-list" ? (
   // Clients List View
-  <main className="flex-1 overflow-auto bg-slate-50 dark:bg-slate-800">
+  <main className="flex-1 overflow-auto bg-gradient-to-br from-blue-50 via-slate-50 to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
     <div className="p-4 lg:p-6 h-full flex flex-col">
-      <div className="mb-4">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Клиенти</h1>
-        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Управление на клиенти</p>
+      <div className="mb-4 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-lg p-4 border-2 border-blue-200 dark:border-slate-600">
+        <h1 className="text-2xl font-bold text-blue-900 dark:text-blue-100">Клиенти</h1>
+        <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">Управление на клиенти</p>
       </div>
 
       {/* Search Mode Toggle - Tab Style */}
-      <div className="border-b-2 border-slate-300 dark:border-slate-600 mb-4">
-        <div className="flex gap-2">
+      <div className="border-b-3 border-blue-300 dark:border-blue-600 mb-4 bg-blue-100/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-t-lg">
+        <div className="flex gap-2 p-2">
           <button
             onClick={() => setClientSearchMode("clients")}
-            className={`px-6 py-3 text-sm font-semibold transition-all rounded-t-lg border-2 border-b-0 ${
+            className={`px-6 py-3 text-sm font-semibold transition-all rounded-lg ${
               clientSearchMode === "clients"
-                ? "bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border-slate-300 dark:border-slate-600 -mb-0.5 relative z-10"
-                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700"
+                ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50 dark:shadow-blue-400/30"
+                : "bg-blue-200 dark:bg-slate-700 text-blue-900 dark:text-blue-200 hover:bg-blue-300 dark:hover:bg-slate-600"
             }`}
           >
             Търси клиенти
           </button>
           <button
             onClick={() => setClientSearchMode("all")}
-            className={`px-6 py-3 text-sm font-semibold transition-all rounded-t-lg border-2 border-b-0 ${
+            className={`px-6 py-3 text-sm font-semibold transition-all rounded-lg ${
               clientSearchMode === "all"
-                ? "bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border-slate-300 dark:border-slate-600 -mb-0.5 relative z-10"
-                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700"
+                ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50 dark:shadow-blue-400/30"
+                : "bg-blue-200 dark:bg-slate-700 text-blue-900 dark:text-blue-200 hover:bg-blue-300 dark:hover:bg-slate-600"
             }`}
           >
             Търси всички контрагенти
@@ -1849,29 +1849,29 @@ export function EmployeeDashboard() {
         <CardContent className="p-0 flex-1 overflow-hidden">
           <div className="overflow-auto h-full">
             <table className="w-full">
-              <thead className="bg-slate-100 dark:bg-slate-800">
-                <tr className="border-b-2 border-slate-300 dark:border-slate-600">
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+              <thead className="bg-blue-600 dark:bg-blue-700">
+                <tr className="border-b-2 border-blue-700 dark:border-blue-800">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Клиентски номер
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Име
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Адрес
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Телефон
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Имейл
                   </th>
                   {clientSearchMode === "all" && (
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                       Бизнес роли
                     </th>
                   )}
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Тип
                   </th>
                 </tr>
@@ -1968,32 +1968,32 @@ export function EmployeeDashboard() {
   </main>
 ) : currentView === "suppliers-list" ? (
   // Suppliers List View
-  <main className="flex-1 overflow-auto bg-slate-50 dark:bg-slate-800">
+  <main className="flex-1 overflow-auto bg-gradient-to-br from-cyan-50 via-slate-50 to-teal-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
     <div className="p-4 lg:p-6 h-full flex flex-col">
-      <div className="mb-4">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Доставчици</h1>
-        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Управление на доставчици</p>
+      <div className="mb-4 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-lg p-4 border-2 border-cyan-200 dark:border-slate-600">
+        <h1 className="text-2xl font-bold text-cyan-900 dark:text-cyan-100">Доставчици</h1>
+        <p className="text-sm text-cyan-700 dark:text-cyan-300 mt-1">Управление на доставчици</p>
       </div>
 
       {/* Search Mode Toggle - Tab Style */}
-      <div className="border-b-2 border-slate-300 dark:border-slate-600 mb-4">
-        <div className="flex gap-2">
+      <div className="border-b-3 border-cyan-300 dark:border-cyan-600 mb-4 bg-cyan-100/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-t-lg">
+        <div className="flex gap-2 p-2">
           <button
             onClick={() => setSupplierSearchMode("suppliers")}
-            className={`px-6 py-3 text-sm font-semibold transition-all rounded-t-lg border-2 border-b-0 ${
+            className={`px-6 py-3 text-sm font-semibold transition-all rounded-lg ${
               supplierSearchMode === "suppliers"
-                ? "bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border-slate-300 dark:border-slate-600 -mb-0.5 relative z-10"
-                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700"
+                ? "bg-cyan-600 text-white shadow-lg shadow-cyan-500/50 dark:shadow-cyan-400/30"
+                : "bg-cyan-200 dark:bg-slate-700 text-cyan-900 dark:text-cyan-200 hover:bg-cyan-300 dark:hover:bg-slate-600"
             }`}
           >
             Търси доставчици
           </button>
           <button
             onClick={() => setSupplierSearchMode("all")}
-            className={`px-6 py-3 text-sm font-semibold transition-all rounded-t-lg border-2 border-b-0 ${
+            className={`px-6 py-3 text-sm font-semibold transition-all rounded-lg ${
               supplierSearchMode === "all"
-                ? "bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border-slate-300 dark:border-slate-600 -mb-0.5 relative z-10"
-                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700"
+                ? "bg-cyan-600 text-white shadow-lg shadow-cyan-500/50 dark:shadow-cyan-400/30"
+                : "bg-cyan-200 dark:bg-slate-700 text-cyan-900 dark:text-cyan-200 hover:bg-cyan-300 dark:hover:bg-slate-600"
             }`}
           >
             Търси всички контрагенти
@@ -2100,32 +2100,32 @@ export function EmployeeDashboard() {
         <CardContent className="p-0 flex-1 overflow-hidden">
           <div className="overflow-auto h-full">
             <table className="w-full">
-              <thead className="bg-slate-100 dark:bg-slate-800">
-                <tr className="border-b-2 border-slate-300 dark:border-slate-600">
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+              <thead className="bg-cyan-600 dark:bg-cyan-700">
+                <tr className="border-b-2 border-cyan-700 dark:border-cyan-800">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Клиентски номер
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Име
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Адрес
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Телефон
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Имейл
                   </th>
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Сфера на доставки
                   </th>
                   {supplierSearchMode === "all" && (
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                    <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                       Бизнес роли
                     </th>
                   )}
-                  <th className="text-left py-3 px-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-white">
                     Тип
                   </th>
                 </tr>
