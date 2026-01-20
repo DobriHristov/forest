@@ -232,7 +232,7 @@ export function EmployeeDashboard() {
   const [showFilteredOrdersPopup, setShowFilteredOrdersPopup] = useState(false)
   const [selectedQualityFilter, setSelectedQualityFilter] = useState("")
 
-  const [rightPanelWidth, setRightPanelWidth] = useState(800)
+  const [rightPanelWidth, setRightPanelWidth] = useState(1100)
   const [isResizing, setIsResizing] = useState(false)
   const [addressPanelWidth, setAddressPanelWidth] = useState(500)
   const [isAddressPanelResizing, setIsAddressPanelResizing] = useState(false)
@@ -2260,138 +2260,150 @@ export function EmployeeDashboard() {
                     </Button>
 
                     {showNewContactForm && !selectedContactForDetails && (
-                      <div className="mt-4 p-4 bg-emerald-50 dark:bg-emerald-900/20 border-2 border-emerald-300 dark:border-emerald-600 rounded-lg shadow-md space-y-3">
-                        <div className="flex items-center gap-3 bg-white dark:bg-slate-800 p-3 rounded-lg border-2 border-slate-300 dark:border-slate-600 shadow-sm">
-                          <Avatar className="w-10 h-10 border-2 border-emerald-500 shadow-md">
+                      <div className="mt-4 p-6 bg-emerald-50 dark:bg-emerald-900/20 border-2 border-emerald-300 dark:border-emerald-600 rounded-lg shadow-md space-y-5">
+                        <div className="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-lg border-2 border-slate-300 dark:border-slate-600 shadow-sm">
+                          <Avatar className="w-14 h-14 border-2 border-emerald-500 shadow-md">
                             <AvatarImage src="https://i.pravatar.cc/150?img=5" />
                             <AvatarFallback className="bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300">
                               МИ
                             </AvatarFallback>
                           </Avatar>
                           <div>
-                            <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">Мария Илиева</h4>
-                            <p className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-1">
-                              <User className="w-3 h-3" />
+                            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-100">Мария Илиева</h4>
+                            <p className="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-1">
+                              <User className="w-4 h-4" />
                               Физическо лице
                             </p>
-                            <p className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-1 mt-1">
+                            <p className="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-1 mt-1">
                               <img
                                 src="https://flagcdn.com/bg.png"
                                 alt="BG"
-                                className="w-4 h-3 object-cover rounded-sm"
+                                className="w-5 h-4 object-cover rounded-sm"
                               />
                               България
                             </p>
                           </div>
                         </div>
 
-                        {/* Representation Dropdown - no label */}
                         <div>
                           <select
                             value={newContactData.representation}
                             onChange={(e) => setNewContactData({ ...newContactData, representation: e.target.value })}
-                            className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
+                            className="w-full px-4 py-2.5 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
                           >
                             <option value="Се представлява от">Се представлява от</option>
                             <option value="Представлява">Представлява</option>
                           </select>
                         </div>
 
-                        <div className="pt-3 border-t-2 border-slate-300 dark:border-slate-600 space-y-3">
-                          <div>
-                            <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-1 block">
-                              Име/Наименование
-                            </label>
-                            <Input
-                              value={newContactData.name}
-                              onChange={(e) => setNewContactData({ ...newContactData, name: e.target.value })}
-                              placeholder="Въведете име или наименование"
-                              className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-1 block">
-                              Тип на лицето
-                            </label>
-                            <select
-                              value={newContactData.type}
-                              onChange={(e) => setNewContactData({ ...newContactData, type: e.target.value })}
-                              className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
-                            >
-                              <option value="">Изберете тип</option>
-                              <option value="Физическо лице">Физическо лице</option>
-                              <option value="Юридическо лице">Юридическо лице</option>
-                              <option value="Публично Правна организация">Публично Правна организация</option>
-                              <option value="Юридическо лице с нестопанска цел">
-                                Юридическо лице с нестопанска цел
-                              </option>
-                            </select>
-                          </div>
-
-                          <div>
-                            <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-1 block">
-                              Националност
-                            </label>
-                            <select
-                              value={newContactData.nationality}
-                              onChange={(e) => setNewContactData({ ...newContactData, nationality: e.target.value })}
-                              className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
-                            >
-                              {countries.map((country) => (
-                                <option key={country.code} value={country.name}>
-                                  {country.flag} {country.name}
-                                </option>
-                              ))}
-                            </select>
-                          </div>
-
-                          <div className="grid grid-cols-2 gap-3">
-                            <div className="col-span-2">
-                              <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-1 block">
-                                Адрес
-                              </label>
-                              <Input
-                                placeholder="Въведете адрес"
-                                className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
-                              />
-                            </div>
-                            <div>
-                              <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-1 block">
-                                ЕГН/ЕИК
-                              </label>
-                              <Input
-                                placeholder="Въведете ЕГН/ЕИК"
-                                className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
-                              />
-                            </div>
-                            <div>
-                              <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-1 block">
-                                Телефон
-                              </label>
-                              <Input
-                                placeholder="Въведете телефон"
-                                className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
-                              />
-                            </div>
-                            <div className="col-span-2">
-                              <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-1 block">
-                                Имейл
-                              </label>
-                              <Input
-                                type="email"
-                                placeholder="Въведете имейл"
-                                className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
-                              />
+                        <div className="pt-4 border-t-2 border-slate-300 dark:border-slate-600 space-y-5">
+                          <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+                            <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+                              <User className="w-4 h-4" />
+                              Основна информация
+                            </h5>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                              <div className="lg:col-span-2">
+                                <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-2 block">
+                                  Име/Наименование
+                                </label>
+                                <Input
+                                  value={newContactData.name}
+                                  onChange={(e) => setNewContactData({ ...newContactData, name: e.target.value })}
+                                  placeholder="Въведете име или наименование"
+                                  className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                                />
+                              </div>
+                              <div>
+                                <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-2 block">
+                                  Тип на лицето
+                                </label>
+                                <select
+                                  value={newContactData.type}
+                                  onChange={(e) => setNewContactData({ ...newContactData, type: e.target.value })}
+                                  className="w-full px-4 py-2.5 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
+                                >
+                                  <option value="">Изберете тип</option>
+                                  <option value="Физическо лице">Физическо лице</option>
+                                  <option value="Юридическо лице">Юридическо лице</option>
+                                  <option value="Публично Правна организация">Публично Правна организация</option>
+                                  <option value="Юридическо лице с нестопанска цел">
+                                    Юридическо лице с нестопанска цел
+                                  </option>
+                                </select>
+                              </div>
+                              <div>
+                                <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-2 block">
+                                  Националност
+                                </label>
+                                <select
+                                  value={newContactData.nationality}
+                                  onChange={(e) => setNewContactData({ ...newContactData, nationality: e.target.value })}
+                                  className="w-full px-4 py-2.5 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
+                                >
+                                  {countries.map((country) => (
+                                    <option key={country.code} value={country.name}>
+                                      {country.flag} {country.name}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
                             </div>
                           </div>
 
-                          <div>
-                            <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
+                          <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+                            <h5 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+                              <Phone className="w-4 h-4" />
+                              Контактни данни
+                            </h5>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                              <div className="lg:col-span-2">
+                                <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-2 block">
+                                  Адрес
+                                </label>
+                                <Input
+                                  placeholder="Въведете адрес"
+                                  className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                                />
+                              </div>
+                              <div>
+                                <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-2 block">
+                                  ЕГН/ЕИК
+                                </label>
+                                <Input
+                                  placeholder="Въведете ЕГН/ЕИК"
+                                  className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                                />
+                              </div>
+                              <div>
+                                <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-2 block">
+                                  Телефон
+                                </label>
+                                <Input
+                                  placeholder="Въведете телефон"
+                                  className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                                />
+                              </div>
+                              <div className="lg:col-span-2">
+                                <label className="text-xs font-medium text-slate-900 dark:text-slate-100 mb-2 block">
+                                  Имейл
+                                </label>
+                                <Input
+                                  type="email"
+                                  placeholder="Въведете имейл"
+                                  className="w-full bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 shadow-sm"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+                            <h5 className="text-sm font-semibold text-emerald-900 dark:text-emerald-100 mb-3">
                               Качество
-                            </label>
-                            <div className="grid grid-cols-2 gap-2">
+                            </h5>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                               {qualityOptions.map((option) => (
-                                <label key={option} className="flex items-center gap-2 cursor-pointer">
+                                <label key={option} className="flex items-center gap-2 cursor-pointer p-2 rounded hover:bg-emerald-50 dark:hover:bg-emerald-900/10 transition-colors">
                                   <input
                                     type="checkbox"
                                     checked={newContactData.quality.includes(option)}
@@ -2406,7 +2418,7 @@ export function EmployeeDashboard() {
                                   <span className="text-sm text-emerald-900 dark:text-emerald-100">{option}</span>
                                 </label>
                               ))}
-                              <label className="flex items-center gap-2 cursor-pointer">
+                              <label className="flex items-center gap-2 cursor-pointer p-2 rounded hover:bg-emerald-50 dark:hover:bg-emerald-900/10 transition-colors">
                                 <input
                                   type="checkbox"
                                   checked={newContactData.isMol}
@@ -2415,7 +2427,7 @@ export function EmployeeDashboard() {
                                 />
                                 <span className="text-sm text-emerald-900 dark:text-emerald-100">Мол</span>
                               </label>
-                              <label className="flex items-center gap-2 cursor-pointer">
+                              <label className="flex items-center gap-2 cursor-pointer p-2 rounded hover:bg-emerald-50 dark:hover:bg-emerald-900/10 transition-colors">
                                 <input
                                   type="checkbox"
                                   checked={newContactData.isContactPerson}
@@ -2430,46 +2442,52 @@ export function EmployeeDashboard() {
                           </div>
 
                           {currentView === "suppliers-list" && (
-                            <>
-                              <div>
-                                <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
-                                  Сфера на доставки
-                                </label>
-                                <select
-                                  value={supplierScope}
-                                  onChange={(e) => setSupplierScope(e.target.value)}
-                                  className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
-                                >
-                                  <option value="">Избери сфера...</option>
-                                  <option value="IT услуги">IT услуги</option>
-                                  <option value="Строителство">Строителство</option>
-                                  <option value="Транспорт">Транспорт</option>
-                                  <option value="Консултации">Консултации</option>
-                                  <option value="Материали">Материали</option>
-                                  <option value="Оборудване">Оборудване</option>
-                                  <option value="Друго">Друго</option>
-                                </select>
+                            <div className="bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded-lg border-2 border-cyan-300 dark:border-cyan-700">
+                              <h5 className="text-sm font-semibold text-cyan-900 dark:text-cyan-100 mb-3 flex items-center gap-2">
+                                <Building2 className="w-4 h-4" />
+                                Информация за доставчик
+                              </h5>
+                              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                <div>
+                                  <label className="text-xs font-medium text-cyan-900 dark:text-cyan-100 mb-2 block">
+                                    Сфера на доставки
+                                  </label>
+                                  <select
+                                    value={supplierScope}
+                                    onChange={(e) => setSupplierScope(e.target.value)}
+                                    className="w-full px-4 py-2.5 text-sm bg-white dark:bg-slate-800 border-2 border-cyan-300 dark:border-cyan-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
+                                  >
+                                    <option value="">Избери сфера...</option>
+                                    <option value="IT услуги">IT услуги</option>
+                                    <option value="Строителство">Строителство</option>
+                                    <option value="Транспорт">Транспорт</option>
+                                    <option value="Консултации">Консултации</option>
+                                    <option value="Материали">Материали</option>
+                                    <option value="Оборудване">Оборудване</option>
+                                    <option value="Друго">Друго</option>
+                                  </select>
+                                </div>
+                                <div className="lg:col-span-2">
+                                  <label className="text-xs font-medium text-cyan-900 dark:text-cyan-100 mb-2 block">
+                                    Описание
+                                  </label>
+                                  <textarea
+                                    value={supplierDescription}
+                                    onChange={(e) => setSupplierDescription(e.target.value)}
+                                    placeholder="Кратко описание на доставчика..."
+                                    className="w-full px-4 py-2.5 text-sm bg-white dark:bg-slate-800 border-2 border-cyan-300 dark:border-cyan-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm resize-none"
+                                    rows={3}
+                                  />
+                                </div>
                               </div>
-                              <div>
-                                <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
-                                  Описание
-                                </label>
-                                <textarea
-                                  value={supplierDescription}
-                                  onChange={(e) => setSupplierDescription(e.target.value)}
-                                  placeholder="Кратко описание на доставчика..."
-                                  className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm resize-none"
-                                  rows={3}
-                                />
-                              </div>
-                            </>
+                            </div>
                           )}
                         </div>
 
-                        <div className="flex gap-3 pt-2">
+                        <div className="flex gap-3 pt-4">
                           <Button
                             onClick={handleSaveContact}
-                            className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white"
+                            className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white py-3"
                           >
                             <Check className="w-4 h-4 mr-2" />
                             Запази
@@ -2477,7 +2495,7 @@ export function EmployeeDashboard() {
                           <Button
                             onClick={handleCancelContact}
                             variant="outline"
-                            className="flex-1 border-2 border-emerald-400 dark:border-emerald-600 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 bg-transparent shadow-sm"
+                            className="flex-1 border-2 border-emerald-400 dark:border-emerald-600 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 bg-transparent shadow-sm py-3"
                           >
                             <X className="w-4 h-4 mr-2" />
                             Отказ
