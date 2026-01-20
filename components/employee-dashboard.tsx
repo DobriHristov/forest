@@ -232,10 +232,12 @@ export function EmployeeDashboard() {
   const [showFilteredOrdersPopup, setShowFilteredOrdersPopup] = useState(false)
   const [selectedQualityFilter, setSelectedQualityFilter] = useState("")
 
-  const [rightPanelWidth, setRightPanelWidth] = useState(500)
+  const [rightPanelWidth, setRightPanelWidth] = useState(800)
   const [isResizing, setIsResizing] = useState(false)
   const [addressPanelWidth, setAddressPanelWidth] = useState(500)
   const [isAddressPanelResizing, setIsAddressPanelResizing] = useState(false)
+  const [supplierScope, setSupplierScope] = useState("")
+  const [supplierDescription, setSupplierDescription] = useState("")
 
   // Added state for editing address and panel visibility
   const [addAddressPanelOpen, setAddAddressPanelOpen] = useState(false)
@@ -1927,9 +1929,29 @@ export function EmployeeDashboard() {
                 >
                   <div className="sticky top-0 bg-white dark:bg-slate-800 border-b-2 border-slate-300 dark:border-slate-600 p-6 z-10 shadow-md">
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
-                        Добавяне на контрагент
-                      </h3>
+                      <div>
+                        <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-2">
+                          Добавяне на контрагент
+                        </h3>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-slate-600 dark:text-slate-400">Бизнес роля:</span>
+                          <Badge
+                            className={`${
+                              currentView === "clients-list"
+                                ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300"
+                                : currentView === "suppliers-list"
+                                  ? "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300"
+                                  : "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300"
+                            } text-xs`}
+                          >
+                            {currentView === "clients-list"
+                              ? "Клиент"
+                              : currentView === "suppliers-list"
+                                ? "Доставчик"
+                                : "Партньор"}
+                          </Badge>
+                        </div>
+                      </div>
                       <Button
                         variant="ghost"
                         size="icon"
@@ -1939,10 +1961,11 @@ export function EmployeeDashboard() {
                           setShowNewContactForm(false)
                           setPendingSavedContacts([])
                           setExpandedContactRow(null)
-                          // Reset quality states when closing the add contact panel
                           setSelectedContactQuality([])
                           setSelectedContactMol(false)
                           setSelectedContactContactPerson(false)
+                          setSupplierScope("")
+                          setSupplierDescription("")
                         }}
                         className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
                       >
@@ -2039,10 +2062,13 @@ export function EmployeeDashboard() {
                                         </div>
                                       </div>
 
-                                      {/* Representation Dropdown - no label */}
+                                      {/* Representation Dropdown */}
                                       <div>
+                                        <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
+                                          Представителство
+                                        </label>
                                         <select
-                                          value={newContactData.representation} // Use newContactData for form state
+                                          value={newContactData.representation}
                                           onChange={(e) =>
                                             setNewContactData({ ...newContactData, representation: e.target.value })
                                           }
@@ -2110,8 +2136,8 @@ export function EmployeeDashboard() {
                                         </div>
 
                                         <div>
-                                          <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-1 block">
-                                            Качество
+                                          <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
+                                            Бизнес роли
                                           </label>
                                           <div className="grid grid-cols-2 gap-2">
                                             {qualityOptions.map((option) => (
@@ -2159,6 +2185,43 @@ export function EmployeeDashboard() {
                                             </label>
                                           </div>
                                         </div>
+
+                                        {/* Supplier-specific fields */}
+                                        {currentView === "suppliers-list" && (
+                                          <>
+                                            <div>
+                                              <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
+                                                Сфера на доставки
+                                              </label>
+                                              <select
+                                                value={supplierScope}
+                                                onChange={(e) => setSupplierScope(e.target.value)}
+                                                className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
+                                              >
+                                                <option value="">Избери сфера...</option>
+                                                <option value="IT услуги">IT услуги</option>
+                                                <option value="Строителство">Строителство</option>
+                                                <option value="Транспорт">Транспорт</option>
+                                                <option value="Консултации">Консултации</option>
+                                                <option value="Материали">Материали</option>
+                                                <option value="Оборудване">Оборудване</option>
+                                                <option value="Друго">Друго</option>
+                                              </select>
+                                            </div>
+                                            <div>
+                                              <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
+                                                Описание
+                                              </label>
+                                              <textarea
+                                                value={supplierDescription}
+                                                onChange={(e) => setSupplierDescription(e.target.value)}
+                                                placeholder="Кратко описание на доставчика..."
+                                                className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm resize-none"
+                                                rows={3}
+                                              />
+                                            </div>
+                                          </>
+                                        )}
                                       </div>
 
                                       <div className="flex gap-3 pt-2">
