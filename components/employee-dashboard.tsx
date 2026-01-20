@@ -2489,26 +2489,26 @@ export function EmployeeDashboard() {
               />
             )}
 
-            <div className="max-w-[1920px] mx-auto p-6 space-y-6">
-              <div className="flex items-center justify-between">
+            <div className="max-w-full mx-auto p-3 sm:p-4 space-y-3 sm:space-y-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
                   <ChevronRight className="w-4 h-4" />
                   <span className="font-medium text-slate-900 dark:text-slate-100">Детайли за Контрагент</span>
                 </div>
                 <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-lg px-8 py-3 text-base font-semibold"
+                  size="default"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-lg"
                 >
-                  <Plus className="w-5 h-5 mr-2" />
+                  <Plus className="w-4 h-4 mr-2" />
                   Създаване на поръчка
                 </Button>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4">
                 {/* Left Sidebar - Employee Profile */}
                 <div className="lg:col-span-3">
-                  <Card className="p-4 bg-white dark:bg-slate-800 shadow-lg border-2 border-slate-300 dark:border-slate-600">
-                    <div className="flex items-start gap-3 mb-4">
+                  <Card className="p-3 bg-white dark:bg-slate-800 shadow-lg border-2 border-slate-300 dark:border-slate-600">
+                    <div className="flex items-start gap-2 mb-3">
                       <div className="relative group flex-shrink-0">
                         <Avatar className="w-16 h-16 border-2 border-orange-200 dark:border-orange-800 shadow-md">
                           <AvatarImage src="https://i.pravatar.cc/150?img=5" />
@@ -3171,11 +3171,11 @@ export function EmployeeDashboard() {
                     </div>
                   </Card>
 
-                  <Card className="mt-3 p-4 bg-white dark:bg-slate-800 shadow-sm border-slate-200 dark:border-slate-700">
-                    <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 mb-4">
+                  <Card className="mt-3 p-3 bg-white dark:bg-slate-800 shadow-sm border-slate-200 dark:border-slate-700">
+                    <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">
                       Хронология на Дейности
                     </h3>
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       {timelineEvents.map((event, index) => {
                         const Icon = event.icon
                         return (
@@ -3204,54 +3204,54 @@ export function EmployeeDashboard() {
                 {/* Main Content */}
                 <div className="lg:col-span-9">
                   {/* Stats Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                    <Card className="p-4 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-200 dark:border-blue-800 shadow-sm">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <Card className="p-3 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-200 dark:border-blue-800 shadow-sm">
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="text-xs font-medium text-blue-600 dark:text-blue-400 mb-1">Поръчки</p>
-                          <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">{qualityCount.Клиент}</p>
+                          <p className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">{qualityCount.Клиент}</p>
                         </div>
-                        <div className="w-11 h-11 rounded-xl bg-blue-500 dark:bg-blue-600 flex items-center justify-center">
-                          <Briefcase className="w-6 h-6 text-white" />
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-blue-500 dark:bg-blue-600 flex items-center justify-center">
+                          <Briefcase className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                       </div>
                     </Card>
 
-                    <Card className="p-4 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 border-emerald-200 dark:border-emerald-800 shadow-sm">
+                    <Card className="p-3 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 border-emerald-200 dark:border-emerald-800 shadow-sm">
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="text-xs font-medium text-emerald-600 dark:text-emerald-400 mb-1">Изплатени</p>
-                          <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">42,800 лв</p>
+                          <p className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">42,800 лв</p>
                         </div>
-                        <div className="w-11 h-11 rounded-xl bg-emerald-500 dark:bg-emerald-600 flex items-center justify-center">
-                          <TrendingUp className="w-6 h-6 text-white" />
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-500 dark:bg-emerald-600 flex items-center justify-center">
+                          <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                       </div>
                     </Card>
 
-                    <Card className="p-4 bg-gradient-to-br from-rose-50 to-red-50 dark:from-rose-900/20 dark:to-red-900/20 border-rose-200 dark:border-rose-800 shadow-sm">
+                    <Card className="p-3 bg-gradient-to-br from-rose-50 to-red-50 dark:from-rose-900/20 dark:to-red-900/20 border-rose-200 dark:border-rose-800 shadow-sm">
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="text-xs font-medium text-rose-600 dark:text-rose-400 mb-1">Неизплатени</p>
-                          <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">15,500 лв</p>
+                          <p className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">15,500 лв</p>
                         </div>
-                        <div className="w-11 h-11 rounded-xl bg-rose-500 dark:bg-rose-600 flex items-center justify-center">
-                          <DollarSign className="w-6 h-6 text-white" />
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-rose-500 dark:bg-rose-600 flex items-center justify-center">
+                          <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                       </div>
                     </Card>
 
-                    <Card className="p-4 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border-amber-200 dark:border-amber-800 shadow-sm">
+                    <Card className="p-3 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border-amber-200 dark:border-amber-800 shadow-sm">
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="text-xs font-medium text-amber-600 dark:text-amber-400 mb-1">Рейтинг</p>
                           <div className="flex items-center gap-1">
-                            <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">4.8</p>
-                            <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                            <p className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">4.8</p>
+                            <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-400 text-amber-400" />
                           </div>
                         </div>
-                        <div className="w-11 h-11 rounded-xl bg-amber-500 dark:bg-amber-600 flex items-center justify-center">
-                          <Award className="w-6 h-6 text-white" />
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-amber-500 dark:bg-amber-600 flex items-center justify-center">
+                          <Award className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                       </div>
                     </Card>
@@ -3259,13 +3259,13 @@ export function EmployeeDashboard() {
 
                   {/* Tabs */}
                   <Card className="p-1 bg-white dark:bg-slate-800 shadow-md border-2 border-slate-300 dark:border-slate-600">
-                    <div className="border-b border-slate-200 dark:border-slate-700 px-6">
-                      <div className="flex gap-6 overflow-x-auto">
+                    <div className="border-b border-slate-200 dark:border-slate-700 px-3 sm:px-4">
+                      <div className="flex gap-3 sm:gap-4 overflow-x-auto">
                         {tabs.map((tab) => (
                           <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
+                            className={`py-2 sm:py-3 text-xs sm:text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
                               activeTab === tab.id
                                 ? "border-emerald-500 text-emerald-600 dark:text-emerald-400"
                                 : "border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100"
@@ -3277,29 +3277,29 @@ export function EmployeeDashboard() {
                       </div>
                     </div>
 
-                    <div className="p-6 space-y-4">
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        <div className="flex-1">
+                    <div className="p-3 sm:p-4 space-y-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+                        <div>
                           <Input
                             placeholder="Търсене по име..."
                             value={filterName}
                             onChange={(e) => setFilterName(e.target.value)}
-                            className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"
+                            className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 h-9 text-sm"
                           />
                         </div>
-                        <div className="flex-1">
+                        <div>
                           <Input
                             placeholder="Търсене по тип..."
                             value={filterType}
                             onChange={(e) => setFilterType(e.target.value)}
-                            className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"
+                            className="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 h-9 text-sm"
                           />
                         </div>
-                        <div className="flex-1">
+                        <div>
                           <select
                             value={filterStatus}
                             onChange={(e) => setFilterStatus(e.target.value)}
-                            className="w-full h-10 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md text-sm text-slate-900 dark:text-slate-100"
+                            className="w-full h-9 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md text-sm text-slate-900 dark:text-slate-100"
                           >
                             <option value="">Всички статуси</option>
                             <option value="Завършен">Завършен</option>
@@ -3307,10 +3307,10 @@ export function EmployeeDashboard() {
                             <option value="Планиран">Планиран</option>
                           </select>
                         </div>
-                        <div className="flex-1 relative">
+                        <div className="relative">
                           <button
                             onClick={() => setShowQualityFilterPopup(!showQualityFilterPopup)}
-                            className="w-full h-10 px-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md text-sm text-slate-900 dark:text-slate-100 text-left flex items-center justify-between"
+                            className="w-full h-9 px-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md text-sm text-slate-900 dark:text-slate-100 text-left flex items-center justify-between"
                           >
                             <span>
                               {filterQuality.length === 0 ? "Всички качества" : `${filterQuality.length} избрани`}
