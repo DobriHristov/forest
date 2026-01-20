@@ -425,10 +425,18 @@ export function EmployeeDashboard() {
   const [contractorBusinessRoleFilter, setContractorBusinessRoleFilter] = useState<string[]>([])
   const [supplierAreaFilter, setSupplierAreaFilter] = useState<string[]>([])
   const [currentPage, setCurrentPage] = useState(1)
+  const [contractorsPerPage, setContractorsPerPage] = useState(10)
   const [expandedNavItems, setExpandedNavItems] = useState<string[]>(["Контрагенти"])
   const [clientSearchMode, setClientSearchMode] = useState<"clients" | "all">("clients")
   const [supplierSearchMode, setSupplierSearchMode] = useState<"suppliers" | "all">("suppliers")
-  const contractorsPerPage = 10
+
+  // Pagination for clients
+  const [clientsCurrentPage, setClientsCurrentPage] = useState(1)
+  const [clientsPerPage, setClientsPerPage] = useState(10)
+
+  // Pagination for suppliers
+  const [suppliersCurrentPage, setSuppliersCurrentPage] = useState(1)
+  const [suppliersPerPage, setSuppliersPerPage] = useState(10)
   
   const allSupplierAreas = ["Вода", "Алкохол", "Хотели", "Канцеларски материали", "Компютърна техника"]
 
@@ -811,6 +819,193 @@ export function EmployeeDashboard() {
       address: "София, България",
       supplierArea: ["Компютърна техника", "Алкохол"],
     },
+    {
+      id: 9,
+      name: "Мария Димитрова",
+      type: "Физическо лице",
+      quality: ["Клиент"],
+      businessRole: ["Клиент"],
+      email: "maria.dimitrova@example.com",
+      phone: "+359 888 234 567",
+      address: "Русе, България",
+      supplierArea: [],
+    },
+    {
+      id: 10,
+      name: "Търговия 2000 ООД",
+      type: "Юридическо лице",
+      quality: ["Доставчик"],
+      businessRole: ["Доставчик"],
+      email: "trade2000@example.bg",
+      phone: "+359 888 345 678",
+      address: "Плевен, България",
+      supplierArea: ["Канцеларски материали"],
+    },
+    {
+      id: 11,
+      name: "Елена Георгиева",
+      type: "Физическо лице",
+      quality: ["Клиент", "Платец"],
+      businessRole: ["Клиент"],
+      email: "elena.georgieva@example.com",
+      phone: "+359 888 456 789",
+      address: "Стара Загора, България",
+      supplierArea: [],
+    },
+    {
+      id: 12,
+      name: "Мега Трейд АД",
+      type: "Юридическо лице",
+      quality: ["Партньор"],
+      businessRole: ["Доставчик"],
+      email: "office@megatrade.bg",
+      phone: "+359 888 567 890",
+      address: "Бургас, България",
+      supplierArea: ["Хотели", "Алкохол", "Вода"],
+    },
+    {
+      id: 13,
+      name: "Иван Стоянов",
+      type: "Физическо лице",
+      quality: ["Клиент"],
+      businessRole: ["Клиент"],
+      email: "ivan.stoyanov@example.com",
+      phone: "+359 888 678 901",
+      address: "Благоевград, България",
+      supplierArea: [],
+    },
+    {
+      id: 14,
+      name: "Софт Солюшън ООД",
+      type: "Юридическо лице",
+      quality: ["Клиент", "МОЛ"],
+      businessRole: ["Клиент"],
+      email: "contact@softsolution.bg",
+      phone: "+359 888 789 012",
+      address: "София, България",
+      supplierArea: [],
+    },
+    {
+      id: 15,
+      name: "Николай Иванов",
+      type: "Физическо лице",
+      quality: ["Доставчик"],
+      businessRole: ["Доставчик"],
+      email: "nikolay.ivanov@example.com",
+      phone: "+359 888 890 123",
+      address: "Велико Търново, България",
+      supplierArea: ["Канцеларски материали", "Компютърна техника"],
+    },
+    {
+      id: 16,
+      name: "Бизнес Консулт АД",
+      type: "Юридическо лице",
+      quality: ["Партньор", "Клиент"],
+      businessRole: ["Клиент", "Доставчик"],
+      email: "info@bizconsult.bg",
+      phone: "+359 888 901 234",
+      address: "Пловдив, България",
+      supplierArea: ["Хотели"],
+    },
+    {
+      id: 17,
+      name: "Светлана Петрова",
+      type: "Физическо лице",
+      quality: ["Клиент"],
+      businessRole: ["Клиент"],
+      email: "svetlana.petrova@example.com",
+      phone: "+359 888 012 345",
+      address: "Добрич, България",
+      supplierArea: [],
+    },
+    {
+      id: 18,
+      name: "Престиж Груп ЕООД",
+      type: "Юридическо лице",
+      quality: ["Доставчик"],
+      businessRole: ["Доставчик"],
+      email: "prestige@example.bg",
+      phone: "+359 888 123 456",
+      address: "Варна, България",
+      supplierArea: ["Вода", "Алкохол"],
+    },
+    {
+      id: 19,
+      name: "Христо Маринов",
+      type: "Физическо лице",
+      quality: ["Клиент", "Платец"],
+      businessRole: ["Клиент"],
+      email: "hristo.marinov@example.com",
+      phone: "+359 888 234 567",
+      address: "Шумен, България",
+      supplierArea: [],
+    },
+    {
+      id: 20,
+      name: "Динамик Системс ООД",
+      type: "Юридическо лице",
+      quality: ["Клиент"],
+      businessRole: ["Клиент"],
+      email: "office@dynamic.bg",
+      phone: "+359 888 345 678",
+      address: "София, България",
+      supplierArea: [],
+    },
+    {
+      id: 21,
+      name: "Диана Христова",
+      type: "Физическо лице",
+      quality: ["Доставчик"],
+      businessRole: ["Доставчик"],
+      email: "diana.hristova@example.com",
+      phone: "+359 888 456 789",
+      address: "Кърджали, България",
+      supplierArea: ["Канцеларски материали"],
+    },
+    {
+      id: 22,
+      name: "Евротрейд АД",
+      type: "Юридическо лице",
+      quality: ["Партньор", "Доставчик"],
+      businessRole: ["Доставчик"],
+      email: "eurotrade@example.bg",
+      phone: "+359 888 567 890",
+      address: "Пловдив, България",
+      supplierArea: ["Компютърна техника", "Хотели"],
+    },
+    {
+      id: 23,
+      name: "Стефан Георгиев",
+      type: "Физическо лице",
+      quality: ["Клиент"],
+      businessRole: ["Клиент"],
+      email: "stefan.georgiev@example.com",
+      phone: "+359 888 678 901",
+      address: "Хасково, България",
+      supplierArea: [],
+    },
+    {
+      id: 24,
+      name: "Прогрес Индъстрис ООД",
+      type: "Юридическо лице",
+      quality: ["Клиент", "МОЛ"],
+      businessRole: ["Клиент"],
+      email: "progress@example.bg",
+      phone: "+359 888 789 012",
+      address: "Бургас, България",
+      supplierArea: [],
+    },
+    {
+      id: 25,
+      name: "Радост Николова",
+      type: "Физическо лице",
+      quality: ["Клиент", "Платец"],
+      businessRole: ["Клиент"],
+      email: "radost.nikolova@example.com",
+      phone: "+359 888 890 123",
+      address: "Монтана, България",
+      supplierArea: [],
+    },
   ]
 
   const filteredContacts = availableContacts.filter((contact) =>
@@ -830,6 +1025,31 @@ export function EmployeeDashboard() {
   const paginatedContractors = filteredContractors.slice(
     (currentPage - 1) * contractorsPerPage,
     currentPage * contractorsPerPage,
+  )
+
+  // Clients pagination
+  const filteredClients = availableContacts
+    .filter((c) => clientSearchMode === "all" || c.businessRole.includes("Клиент"))
+    .filter((c) => c.name.toLowerCase().includes(contractorSearchName.toLowerCase()))
+    .filter((c) => contractorSearchType === "" || c.type === contractorSearchType)
+
+  const clientsTotalPages = Math.ceil(filteredClients.length / clientsPerPage)
+  const paginatedClients = filteredClients.slice(
+    (clientsCurrentPage - 1) * clientsPerPage,
+    clientsCurrentPage * clientsPerPage,
+  )
+
+  // Suppliers pagination
+  const filteredSuppliers = availableContacts
+    .filter((c) => supplierSearchMode === "all" || c.businessRole.includes("Доставчик"))
+    .filter((c) => c.name.toLowerCase().includes(contractorSearchName.toLowerCase()))
+    .filter((c) => contractorSearchType === "" || c.type === contractorSearchType)
+    .filter((c) => supplierAreaFilter.length === 0 || supplierAreaFilter.some((a) => c.supplierArea.includes(a)))
+
+  const suppliersTotalPages = Math.ceil(filteredSuppliers.length / suppliersPerPage)
+  const paginatedSuppliers = filteredSuppliers.slice(
+    (suppliersCurrentPage - 1) * suppliersPerPage,
+    suppliersCurrentPage * suppliersPerPage,
   )
 
   const handleContractorClick = (id: number) => {
@@ -1406,35 +1626,49 @@ export function EmployeeDashboard() {
                   </div>
 
                   {/* Pagination */}
-                  {totalPages > 1 && (
-                    <div className="flex items-center justify-between mt-6 pt-4 border-t-2 border-slate-300 dark:border-slate-600">
-                      <div className="text-sm text-slate-600 dark:text-slate-400">
-                        Страница {currentPage} от {totalPages}
-                      </div>
-                      <div className="flex gap-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                          disabled={currentPage === 1}
-                          className="border-2"
-                        >
-                          <ChevronLeft className="w-4 h-4" />
-                          Назад
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
-                          disabled={currentPage === totalPages}
-                          className="border-2"
-                        >
-                          Напред
-                          <ChevronRight className="w-4 h-4" />
-                        </Button>
-                      </div>
+                  <div className="flex items-center justify-between mt-6 pt-4 border-t-2 border-slate-300 dark:border-slate-600">
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm text-slate-600 dark:text-slate-400">Редове на страница:</span>
+                      <select
+                        value={contractorsPerPage}
+                        onChange={(e) => {
+                          setContractorsPerPage(Number(e.target.value))
+                          setCurrentPage(1)
+                        }}
+                        className="px-3 py-1.5 border-2 border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-sm"
+                      >
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
                     </div>
-                  )}
+                    <div className="text-sm text-slate-600 dark:text-slate-400">
+                      Страница {currentPage} от {totalPages} ({filteredContractors.length} резултата)
+                    </div>
+                    <div className="flex gap-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+                        disabled={currentPage === 1}
+                        className="border-2"
+                      >
+                        <ChevronLeft className="w-4 h-4" />
+                        Назад
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+                        disabled={currentPage === totalPages}
+                        className="border-2"
+                      >
+                        Напред
+                        <ChevronRight className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -1544,11 +1778,7 @@ export function EmployeeDashboard() {
                 </tr>
               </thead>
               <tbody>
-                {availableContacts
-                  .filter((c) => clientSearchMode === "all" || c.businessRole.includes("Клиент"))
-                  .filter((c) => c.name.toLowerCase().includes(contractorSearchName.toLowerCase()))
-                  .filter((c) => contractorSearchType === "" || c.type === contractorSearchType)
-                  .map((contractor) => (
+                {paginatedClients.map((contractor) => (
                     <tr
                       key={contractor.id}
                       onClick={() => handleContractorClick(contractor.id)}
@@ -1587,6 +1817,51 @@ export function EmployeeDashboard() {
                   ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Pagination */}
+          <div className="flex items-center justify-between mt-6 pt-4 px-4 border-t-2 border-slate-300 dark:border-slate-600">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-slate-600 dark:text-slate-400">Редове на страница:</span>
+              <select
+                value={clientsPerPage}
+                onChange={(e) => {
+                  setClientsPerPage(Number(e.target.value))
+                  setClientsCurrentPage(1)
+                }}
+                className="px-3 py-1.5 border-2 border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-sm"
+              >
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+            <div className="text-sm text-slate-600 dark:text-slate-400">
+              Страница {clientsCurrentPage} от {clientsTotalPages} ({filteredClients.length} резултата)
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setClientsCurrentPage(Math.max(1, clientsCurrentPage - 1))}
+                disabled={clientsCurrentPage === 1}
+                className="border-2"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                Назад
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setClientsCurrentPage(Math.min(clientsTotalPages, clientsCurrentPage + 1))}
+                disabled={clientsCurrentPage === clientsTotalPages}
+                className="border-2"
+              >
+                Напред
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>
@@ -1744,12 +2019,7 @@ export function EmployeeDashboard() {
                 </tr>
               </thead>
               <tbody>
-                {availableContacts
-                  .filter((c) => supplierSearchMode === "all" || c.businessRole.includes("Доставчик"))
-                  .filter((c) => c.name.toLowerCase().includes(contractorSearchName.toLowerCase()))
-                  .filter((c) => contractorSearchType === "" || c.type === contractorSearchType)
-                  .filter((c) => supplierAreaFilter.length === 0 || supplierAreaFilter.some((a) => c.supplierArea.includes(a)))
-                  .map((contractor) => (
+                {paginatedSuppliers.map((contractor) => (
                     <tr
                       key={contractor.id}
                       onClick={() => handleContractorClick(contractor.id)}
@@ -1801,6 +2071,51 @@ export function EmployeeDashboard() {
                   ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Pagination */}
+          <div className="flex items-center justify-between mt-6 pt-4 px-4 border-t-2 border-slate-300 dark:border-slate-600">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-slate-600 dark:text-slate-400">Редове на страница:</span>
+              <select
+                value={suppliersPerPage}
+                onChange={(e) => {
+                  setSuppliersPerPage(Number(e.target.value))
+                  setSuppliersCurrentPage(1)
+                }}
+                className="px-3 py-1.5 border-2 border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-sm"
+              >
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+            <div className="text-sm text-slate-600 dark:text-slate-400">
+              Страница {suppliersCurrentPage} от {suppliersTotalPages} ({filteredSuppliers.length} резултата)
+            </div>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setSuppliersCurrentPage(Math.max(1, suppliersCurrentPage - 1))}
+                disabled={suppliersCurrentPage === 1}
+                className="border-2"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                Назад
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setSuppliersCurrentPage(Math.min(suppliersTotalPages, suppliersCurrentPage + 1))}
+                disabled={suppliersCurrentPage === suppliersTotalPages}
+                className="border-2"
+              >
+                Напред
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>
