@@ -1770,32 +1770,26 @@ export function EmployeeDashboard() {
 
       {/* Search Mode Toggle - Tab Style */}
       <div className="border-b-2 border-slate-300 dark:border-slate-600 mb-4">
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <button
             onClick={() => setClientSearchMode("clients")}
-            className={`px-6 py-3 text-sm font-semibold transition-all relative ${
+            className={`px-6 py-3 text-sm font-semibold transition-all rounded-t-lg border-2 border-b-0 ${
               clientSearchMode === "clients"
-                ? "text-emerald-600 dark:text-emerald-400"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border-slate-300 dark:border-slate-600 -mb-0.5 relative z-10"
+                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700"
             }`}
           >
             Търси клиенти
-            {clientSearchMode === "clients" && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 dark:bg-emerald-400"></div>
-            )}
           </button>
           <button
             onClick={() => setClientSearchMode("all")}
-            className={`px-6 py-3 text-sm font-semibold transition-all relative ${
+            className={`px-6 py-3 text-sm font-semibold transition-all rounded-t-lg border-2 border-b-0 ${
               clientSearchMode === "all"
-                ? "text-emerald-600 dark:text-emerald-400"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border-slate-300 dark:border-slate-600 -mb-0.5 relative z-10"
+                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700"
             }`}
           >
             Търси всички контрагенти
-            {clientSearchMode === "all" && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 dark:bg-emerald-400"></div>
-            )}
           </button>
         </div>
       </div>
@@ -1983,32 +1977,26 @@ export function EmployeeDashboard() {
 
       {/* Search Mode Toggle - Tab Style */}
       <div className="border-b-2 border-slate-300 dark:border-slate-600 mb-4">
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <button
             onClick={() => setSupplierSearchMode("suppliers")}
-            className={`px-6 py-3 text-sm font-semibold transition-all relative ${
+            className={`px-6 py-3 text-sm font-semibold transition-all rounded-t-lg border-2 border-b-0 ${
               supplierSearchMode === "suppliers"
-                ? "text-emerald-600 dark:text-emerald-400"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border-slate-300 dark:border-slate-600 -mb-0.5 relative z-10"
+                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700"
             }`}
           >
             Търси доставчици
-            {supplierSearchMode === "suppliers" && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 dark:bg-emerald-400"></div>
-            )}
           </button>
           <button
             onClick={() => setSupplierSearchMode("all")}
-            className={`px-6 py-3 text-sm font-semibold transition-all relative ${
+            className={`px-6 py-3 text-sm font-semibold transition-all rounded-t-lg border-2 border-b-0 ${
               supplierSearchMode === "all"
-                ? "text-emerald-600 dark:text-emerald-400"
-                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+                ? "bg-white dark:bg-slate-900 text-emerald-600 dark:text-emerald-400 border-slate-300 dark:border-slate-600 -mb-0.5 relative z-10"
+                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-transparent hover:bg-slate-200 dark:hover:bg-slate-700"
             }`}
           >
             Търси всички контрагенти
-            {supplierSearchMode === "all" && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 dark:bg-emerald-400"></div>
-            )}
           </button>
         </div>
       </div>
