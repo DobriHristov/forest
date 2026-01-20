@@ -1768,23 +1768,37 @@ export function EmployeeDashboard() {
         <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Управление на клиенти</p>
       </div>
 
-      {/* Search Mode Toggle */}
-  <div className="flex flex-wrap gap-3 mb-4">
-  <Button
-  variant={clientSearchMode === "clients" ? "default" : "outline"}
-  onClick={() => setClientSearchMode("clients")}
-  className={`${clientSearchMode === "clients" ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white ring-2 ring-emerald-400" : "bg-transparent border-2 border-slate-300 dark:border-slate-600"}`}
-  >
-  Търси клиенти
-  </Button>
-  <Button
-  variant={clientSearchMode === "all" ? "default" : "outline"}
-  onClick={() => setClientSearchMode("all")}
-  className={`${clientSearchMode === "all" ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white ring-2 ring-emerald-400" : "bg-transparent border-2 border-slate-300 dark:border-slate-600"}`}
-  >
-  Търси всички контрагенти
-  </Button>
-  </div>
+      {/* Search Mode Toggle - Tab Style */}
+      <div className="border-b-2 border-slate-300 dark:border-slate-600 mb-4">
+        <div className="flex gap-1">
+          <button
+            onClick={() => setClientSearchMode("clients")}
+            className={`px-6 py-3 text-sm font-semibold transition-all relative ${
+              clientSearchMode === "clients"
+                ? "text-emerald-600 dark:text-emerald-400"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+            }`}
+          >
+            Търси клиенти
+            {clientSearchMode === "clients" && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 dark:bg-emerald-400"></div>
+            )}
+          </button>
+          <button
+            onClick={() => setClientSearchMode("all")}
+            className={`px-6 py-3 text-sm font-semibold transition-all relative ${
+              clientSearchMode === "all"
+                ? "text-emerald-600 dark:text-emerald-400"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+            }`}
+          >
+            Търси всички контрагенти
+            {clientSearchMode === "all" && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 dark:bg-emerald-400"></div>
+            )}
+          </button>
+        </div>
+      </div>
 
       {/* Search Filters */}
       <Card className="mb-4 shadow-lg border-2 border-slate-300 dark:border-slate-600">
@@ -1833,6 +1847,11 @@ export function EmployeeDashboard() {
 
       {/* Clients Table */}
       <Card className="shadow-lg border-2 border-slate-300 dark:border-slate-600 flex-1 flex flex-col min-h-0">
+        <CardHeader className="py-3 border-b-2 border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900">
+          <CardTitle className="text-base font-semibold text-slate-900 dark:text-slate-100">
+            Показани резултати: {clientSearchMode === "clients" ? "Клиенти" : "Всички контрагенти"}
+          </CardTitle>
+        </CardHeader>
         <CardContent className="p-0 flex-1 overflow-hidden">
           <div className="overflow-auto h-full">
             <table className="w-full">
@@ -1962,23 +1981,37 @@ export function EmployeeDashboard() {
         <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Управление на доставчици</p>
       </div>
 
-      {/* Search Mode Toggle */}
-  <div className="flex flex-wrap gap-3 mb-4">
-  <Button
-  variant={supplierSearchMode === "suppliers" ? "default" : "outline"}
-  onClick={() => setSupplierSearchMode("suppliers")}
-  className={`${supplierSearchMode === "suppliers" ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white ring-2 ring-emerald-400" : "bg-transparent border-2 border-slate-300 dark:border-slate-600"}`}
-  >
-  Търси доставчици
-  </Button>
-  <Button
-  variant={supplierSearchMode === "all" ? "default" : "outline"}
-  onClick={() => setSupplierSearchMode("all")}
-  className={`${supplierSearchMode === "all" ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white ring-2 ring-emerald-400" : "bg-transparent border-2 border-slate-300 dark:border-slate-600"}`}
-  >
-  Търси всички контрагенти
-  </Button>
-  </div>
+      {/* Search Mode Toggle - Tab Style */}
+      <div className="border-b-2 border-slate-300 dark:border-slate-600 mb-4">
+        <div className="flex gap-1">
+          <button
+            onClick={() => setSupplierSearchMode("suppliers")}
+            className={`px-6 py-3 text-sm font-semibold transition-all relative ${
+              supplierSearchMode === "suppliers"
+                ? "text-emerald-600 dark:text-emerald-400"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+            }`}
+          >
+            Търси доставчици
+            {supplierSearchMode === "suppliers" && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 dark:bg-emerald-400"></div>
+            )}
+          </button>
+          <button
+            onClick={() => setSupplierSearchMode("all")}
+            className={`px-6 py-3 text-sm font-semibold transition-all relative ${
+              supplierSearchMode === "all"
+                ? "text-emerald-600 dark:text-emerald-400"
+                : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
+            }`}
+          >
+            Търси всички контрагенти
+            {supplierSearchMode === "all" && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-600 dark:bg-emerald-400"></div>
+            )}
+          </button>
+        </div>
+      </div>
 
       {/* Search Filters */}
       <Card className="mb-4 shadow-lg border-2 border-slate-300 dark:border-slate-600">
@@ -2071,6 +2104,11 @@ export function EmployeeDashboard() {
 
       {/* Suppliers Table */}
       <Card className="shadow-lg border-2 border-slate-300 dark:border-slate-600 flex-1 flex flex-col min-h-0">
+        <CardHeader className="py-3 border-b-2 border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900">
+          <CardTitle className="text-base font-semibold text-slate-900 dark:text-slate-100">
+            Показани резултати: {supplierSearchMode === "suppliers" ? "Доставчици" : "Всички контрагенти"}
+          </CardTitle>
+        </CardHeader>
         <CardContent className="p-0 flex-1 overflow-hidden">
           <div className="overflow-auto h-full">
             <table className="w-full">
