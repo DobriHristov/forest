@@ -2428,6 +2428,42 @@ export function EmployeeDashboard() {
                               </label>
                             </div>
                           </div>
+
+                          {currentView === "suppliers-list" && (
+                            <>
+                              <div>
+                                <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
+                                  Сфера на доставки
+                                </label>
+                                <select
+                                  value={supplierScope}
+                                  onChange={(e) => setSupplierScope(e.target.value)}
+                                  className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm"
+                                >
+                                  <option value="">Избери сфера...</option>
+                                  <option value="IT услуги">IT услуги</option>
+                                  <option value="Строителство">Строителство</option>
+                                  <option value="Транспорт">Транспорт</option>
+                                  <option value="Консултации">Консултации</option>
+                                  <option value="Материали">Материали</option>
+                                  <option value="Оборудване">Оборудване</option>
+                                  <option value="Друго">Друго</option>
+                                </select>
+                              </div>
+                              <div>
+                                <label className="text-xs font-medium text-emerald-900 dark:text-emerald-100 mb-2 block">
+                                  Описание
+                                </label>
+                                <textarea
+                                  value={supplierDescription}
+                                  onChange={(e) => setSupplierDescription(e.target.value)}
+                                  placeholder="Кратко описание на доставчика..."
+                                  className="w-full px-3 py-2 text-sm bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-600 rounded-md text-slate-900 dark:text-slate-100 shadow-sm resize-none"
+                                  rows={3}
+                                />
+                              </div>
+                            </>
+                          )}
                         </div>
 
                         <div className="flex gap-3 pt-2">
