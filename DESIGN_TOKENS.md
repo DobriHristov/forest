@@ -1,100 +1,100 @@
 # Design Tokens
 
-Complete design system tokens for Figma implementation.
+Complete design system tokens for Figma implementation - Business-oriented professional color scheme.
 
 ## Color System
 
 ### Light Mode Colors
 
 #### Semantic Colors
-- **Background**: `oklch(0.99 0.002 75)` → `#FCFCFC`
-- **Foreground**: `oklch(0.2 0.01 45)` → `#2E2E2E`
+- **Background**: `oklch(0.99 0.002 240)` → `#FCFCFD`
+- **Foreground**: `oklch(0.25 0.015 240)` → `#3A3A42`
 - **Card**: `oklch(1 0 0)` → `#FFFFFF`
-- **Card Foreground**: `oklch(0.2 0.01 45)` → `#2E2E2E`
+- **Card Foreground**: `oklch(0.25 0.015 240)` → `#3A3A42`
 - **Popover**: `oklch(1 0 0)` → `#FFFFFF`
-- **Popover Foreground**: `oklch(0.2 0.01 45)` → `#2E2E2E`
+- **Popover Foreground**: `oklch(0.25 0.015 240)` → `#3A3A42`
 
 #### Brand Colors
-- **Primary**: `oklch(0.55 0.12 35)` → `#7A6A4D`
-  - Primary Foreground: `oklch(0.99 0.01 75)` → `#FCFCFC`
-- **Secondary**: `oklch(0.97 0.008 75)` → `#F7F7F6`
-  - Secondary Foreground: `oklch(0.3 0.01 45)` → `#454544`
-- **Accent**: `oklch(0.68 0.14 40)` → `#A88D5E`
-  - Accent Foreground: `oklch(0.99 0.01 75)` → `#FCFCFC`
+- **Primary**: `oklch(0.45 0.15 250)` → `#1E5EBF` (Professional Blue)
+  - Primary Foreground: `oklch(0.99 0.005 240)` → `#FCFCFD`
+- **Secondary**: `oklch(0.96 0.008 240)` → `#F5F5F7`
+  - Secondary Foreground: `oklch(0.3 0.015 240)` → `#474750`
+- **Accent**: `oklch(0.55 0.12 220)` → `#3B7DBF` (Lighter Blue)
+  - Accent Foreground: `oklch(0.99 0.005 240)` → `#FCFCFD`
 
 #### State Colors
-- **Muted**: `oklch(0.97 0.005 75)` → `#F7F7F7`
-  - Muted Foreground: `oklch(0.52 0.01 45)` → `#787877`
-- **Destructive**: `oklch(0.58 0.2 25)` → `#A34E3A`
-  - Destructive Foreground: `oklch(0.99 0.01 75)` → `#FCFCFC`
+- **Muted**: `oklch(0.96 0.005 240)` → `#F5F5F7`
+  - Muted Foreground: `oklch(0.52 0.015 240)` → `#7E7E8A`
+- **Destructive**: `oklch(0.55 0.22 25)` → `#C53030`
+  - Destructive Foreground: `oklch(0.99 0.005 240)` → `#FCFCFD`
 
 #### UI Elements
-- **Border**: `oklch(0.94 0.005 75)` → `#EFEFEF`
-- **Input**: `oklch(0.96 0.005 75)` → `#F5F5F5`
-- **Ring** (Focus): `oklch(0.55 0.12 35)` → `#7A6A4D`
+- **Border**: `oklch(0.93 0.005 240)` → `#E8E8EB`
+- **Input**: `oklch(0.95 0.005 240)` → `#F0F0F2`
+- **Ring** (Focus): `oklch(0.45 0.15 250)` → `#1E5EBF`
 
 #### Chart Colors
-- **Chart 1**: `oklch(0.55 0.12 35)` → `#7A6A4D`
-- **Chart 2**: `oklch(0.68 0.14 40)` → `#A88D5E`
-- **Chart 3**: `oklch(0.48 0.1 30)` → `#655841`
-- **Chart 4**: `oklch(0.75 0.08 50)` → `#BAA889`
-- **Chart 5**: `oklch(0.45 0.11 28)` → `#5A4D3A`
+- **Chart 1**: `oklch(0.45 0.15 250)` → `#1E5EBF` (Deep Blue)
+- **Chart 2**: `oklch(0.55 0.12 220)` → `#3B7DBF` (Medium Blue)
+- **Chart 3**: `oklch(0.52 0.14 200)` → `#2E7D9A` (Teal Blue)
+- **Chart 4**: `oklch(0.60 0.10 230)` → `#6B93C4` (Light Blue)
+- **Chart 5**: `oklch(0.40 0.16 260)` → `#2A3F9E` (Navy Blue)
 
 #### Sidebar Colors
-- **Sidebar**: `oklch(0.255 0.015 260)` → `#3A3A41`
-- **Sidebar Foreground**: `oklch(0.96 0.005 75)` → `#F5F5F5`
-- **Sidebar Primary**: `oklch(0.68 0.14 40)` → `#A88D5E`
-- **Sidebar Primary Foreground**: `oklch(0.99 0.01 75)` → `#FCFCFC`
-- **Sidebar Accent**: `oklch(0.32 0.018 260)` → `#4A4A52`
-- **Sidebar Accent Foreground**: `oklch(0.96 0.005 75)` → `#F5F5F5`
-- **Sidebar Border**: `oklch(0.3 0.016 260)` → `#454549`
-- **Sidebar Ring**: `oklch(0.68 0.14 40)` → `#A88D5E`
+- **Sidebar**: `oklch(0.20 0.020 240)` → `#292933` (Dark Slate)
+- **Sidebar Foreground**: `oklch(0.96 0.005 240)` → `#F5F5F7`
+- **Sidebar Primary**: `oklch(0.55 0.12 220)` → `#3B7DBF`
+- **Sidebar Primary Foreground**: `oklch(0.99 0.005 240)` → `#FCFCFD`
+- **Sidebar Accent**: `oklch(0.26 0.022 240)` → `#383842`
+- **Sidebar Accent Foreground**: `oklch(0.96 0.005 240)` → `#F5F5F7`
+- **Sidebar Border**: `oklch(0.24 0.020 240)` → `#33333D`
+- **Sidebar Ring**: `oklch(0.55 0.12 220)` → `#3B7DBF`
 
 ### Dark Mode Colors
 
 #### Semantic Colors
-- **Background**: `oklch(0.18 0.02 35)` → `#272320`
-- **Foreground**: `oklch(0.96 0.01 65)` → `#F5F5F4`
-- **Card**: `oklch(0.22 0.025 35)` → `#312D28`
-- **Card Foreground**: `oklch(0.96 0.01 65)` → `#F5F5F4`
-- **Popover**: `oklch(0.22 0.025 35)` → `#312D28`
-- **Popover Foreground**: `oklch(0.96 0.01 65)` → `#F5F5F4`
+- **Background**: `oklch(0.15 0.015 240)` → `#1F1F28`
+- **Foreground**: `oklch(0.96 0.008 240)` → `#F5F5F7`
+- **Card**: `oklch(0.19 0.018 240)` → `#28282F`
+- **Card Foreground**: `oklch(0.96 0.008 240)` → `#F5F5F7`
+- **Popover**: `oklch(0.19 0.018 240)` → `#28282F`
+- **Popover Foreground**: `oklch(0.96 0.008 240)` → `#F5F5F7`
 
 #### Brand Colors
-- **Primary**: `oklch(0.68 0.16 40)` → `#B39668`
-  - Primary Foreground: `oklch(0.18 0.02 35)` → `#272320`
-- **Secondary**: `oklch(0.28 0.03 35)` → `#3F3B36`
-  - Secondary Foreground: `oklch(0.96 0.01 65)` → `#F5F5F4`
-- **Accent**: `oklch(0.72 0.18 45)` → `#C6A26B`
-  - Accent Foreground: `oklch(0.18 0.02 35)` → `#272320`
+- **Primary**: `oklch(0.60 0.14 230)` → `#5B8FDB` (Bright Blue)
+  - Primary Foreground: `oklch(0.15 0.015 240)` → `#1F1F28`
+- **Secondary**: `oklch(0.25 0.020 240)` → `#363640`
+  - Secondary Foreground: `oklch(0.96 0.008 240)` → `#F5F5F7`
+- **Accent**: `oklch(0.65 0.12 210)` → `#52A3C4` (Light Blue)
+  - Accent Foreground: `oklch(0.15 0.015 240)` → `#1F1F28`
 
 #### State Colors
-- **Muted**: `oklch(0.28 0.03 35)` → `#3F3B36`
-  - Muted Foreground: `oklch(0.62 0.02 50)` → `#9A9691`
-- **Destructive**: `oklch(0.58 0.2 25)` → `#A34E3A`
-  - Destructive Foreground: `oklch(0.96 0.01 65)` → `#F5F5F4`
+- **Muted**: `oklch(0.25 0.020 240)` → `#363640`
+  - Muted Foreground: `oklch(0.60 0.015 240)` → `#9999A6`
+- **Destructive**: `oklch(0.55 0.22 25)` → `#C53030`
+  - Destructive Foreground: `oklch(0.96 0.008 240)` → `#F5F5F7`
 
 #### UI Elements
-- **Border**: `oklch(0.28 0.03 35)` → `#3F3B36`
-- **Input**: `oklch(0.28 0.03 35)` → `#3F3B36`
-- **Ring** (Focus): `oklch(0.68 0.16 40)` → `#B39668`
+- **Border**: `oklch(0.25 0.020 240)` → `#363640`
+- **Input**: `oklch(0.25 0.020 240)` → `#363640`
+- **Ring** (Focus): `oklch(0.60 0.14 230)` → `#5B8FDB`
 
 #### Chart Colors
-- **Chart 1**: `oklch(0.68 0.16 40)` → `#B39668`
-- **Chart 2**: `oklch(0.72 0.18 45)` → `#C6A26B`
-- **Chart 3**: `oklch(0.78 0.15 35)` → `#D4B482`
-- **Chart 4**: `oklch(0.82 0.12 55)` → `#DEC89A`
-- **Chart 5**: `oklch(0.62 0.16 30)` → `#9F7F52`
+- **Chart 1**: `oklch(0.60 0.14 230)` → `#5B8FDB` (Bright Blue)
+- **Chart 2**: `oklch(0.65 0.12 210)` → `#52A3C4` (Sky Blue)
+- **Chart 3**: `oklch(0.70 0.12 200)` → `#70B8D6` (Light Cyan)
+- **Chart 4**: `oklch(0.55 0.13 240)` → `#4775BF` (Medium Blue)
+- **Chart 5**: `oklch(0.50 0.15 250)` → `#3658B8` (Deep Blue)
 
 #### Sidebar Colors
-- **Sidebar**: `oklch(0.22 0.025 35)` → `#312D28`
-- **Sidebar Foreground**: `oklch(0.96 0.01 65)` → `#F5F5F4`
-- **Sidebar Primary**: `oklch(0.68 0.16 40)` → `#B39668`
-- **Sidebar Primary Foreground**: `oklch(0.18 0.02 35)` → `#272320`
-- **Sidebar Accent**: `oklch(0.28 0.03 35)` → `#3F3B36`
-- **Sidebar Accent Foreground**: `oklch(0.96 0.01 65)` → `#F5F5F4`
-- **Sidebar Border**: `oklch(0.28 0.03 35)` → `#3F3B36`
-- **Sidebar Ring**: `oklch(0.68 0.16 40)` → `#B39668`
+- **Sidebar**: `oklch(0.19 0.018 240)` → `#28282F`
+- **Sidebar Foreground**: `oklch(0.96 0.008 240)` → `#F5F5F7`
+- **Sidebar Primary**: `oklch(0.60 0.14 230)` → `#5B8FDB`
+- **Sidebar Primary Foreground**: `oklch(0.15 0.015 240)` → `#1F1F28`
+- **Sidebar Accent**: `oklch(0.25 0.020 240)` → `#363640`
+- **Sidebar Accent Foreground**: `oklch(0.96 0.008 240)` → `#F5F5F7`
+- **Sidebar Border**: `oklch(0.25 0.020 240)` → `#363640`
+- **Sidebar Ring**: `oklch(0.60 0.14 230)` → `#5B8FDB`
 
 ## Typography
 
@@ -155,10 +155,10 @@ Based on 4px base unit:
 
 ## Border Radius
 
-- **Small (sm)**: 8px (`calc(12px - 4px)`)
-- **Medium (md)**: 10px (`calc(12px - 2px)`)
-- **Large (lg)**: 12px (base radius)
-- **Extra Large (xl)**: 16px (`calc(12px + 4px)`)
+- **Small (sm)**: 4px (`calc(8px - 4px)`)
+- **Medium (md)**: 6px (`calc(8px - 2px)`)
+- **Large (lg)**: 8px (base radius)
+- **Extra Large (xl)**: 12px (`calc(8px + 4px)`)
 - **Full**: 9999px (pill shape)
 
 ## Shadows
@@ -233,3 +233,20 @@ Based on standard elevation system:
 - **lg**: 1024px
 - **xl**: 1280px
 - **2xl**: 1536px
+
+## Design Philosophy
+
+This business-oriented color scheme features:
+- **Professional Blue** as primary - conveys trust, stability, and professionalism
+- **Slate Gray** backgrounds - modern and sophisticated
+- **Cool Blue Accents** - energetic yet professional
+- **Clean Whites & Grays** - crisp and corporate
+- **Subtle Border Radius** (8px) - modern but not playful
+
+Perfect for:
+- Corporate applications
+- Enterprise software
+- Financial services
+- Professional dashboards
+- B2B platforms
+- Business intelligence tools

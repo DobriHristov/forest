@@ -75,10 +75,10 @@ Step-by-step Figma implementation guide:
 ## Quick Reference
 
 ### Color Palette
-- **Primary**: `#7A6A4D` (light) / `#B39668` (dark)
-- **Accent**: `#A88D5E` (light) / `#C6A26B` (dark)
-- **Background**: `#FCFCFC` (light) / `#272320` (dark)
-- **Foreground**: `#2E2E2E` (light) / `#F5F5F4` (dark)
+- **Primary**: `#1E5EBF` (light) / `#5B8FDB` (dark)
+- **Accent**: `#3B7DBF` (light) / `#52A3C4` (dark)
+- **Background**: `#FCFCFD` (light) / `#1F1F28` (dark)
+- **Foreground**: `#3A3A42` (light) / `#F5F5F7` (dark)
 
 ### Typography
 - **Headings**: Geist, 700/600 weight
@@ -128,7 +128,7 @@ Accordion, Collapsible, Aspect Ratio, Carousel, Toggle, Toggle Group
 
 ## Design System Features
 
-- ✅ Warm, professional color palette (no purple!)
+- ✅ Business-oriented professional blue color palette
 - ✅ Complete light and dark mode support
 - ✅ WCAG 2.1 AA accessibility compliance
 - ✅ Responsive design patterns

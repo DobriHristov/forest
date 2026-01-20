@@ -25,96 +25,96 @@ Figma supports variables (Design → Variables). Here's how to set them up:
 In "Colors - Light" collection, create these variables:
 
 **Semantic Colors:**
-- `background` → `#FCFCFC`
-- `foreground` → `#2E2E2E`
+- `background` → `#FCFCFD`
+- `foreground` → `#3A3A42`
 - `card` → `#FFFFFF`
-- `card-foreground` → `#2E2E2E`
+- `card-foreground` → `#3A3A42`
 - `popover` → `#FFFFFF`
-- `popover-foreground` → `#2E2E2E`
+- `popover-foreground` → `#3A3A42`
 
 **Brand Colors:**
-- `primary` → `#7A6A4D`
-- `primary-foreground` → `#FCFCFC`
-- `secondary` → `#F7F7F6`
-- `secondary-foreground` → `#454544`
-- `accent` → `#A88D5E`
-- `accent-foreground` → `#FCFCFC`
+- `primary` → `#1E5EBF`
+- `primary-foreground` → `#FCFCFD`
+- `secondary` → `#F5F5F7`
+- `secondary-foreground` → `#474750`
+- `accent` → `#3B7DBF`
+- `accent-foreground` → `#FCFCFD`
 
 **State Colors:**
-- `muted` → `#F7F7F7`
-- `muted-foreground` → `#787877`
-- `destructive` → `#A34E3A`
-- `destructive-foreground` → `#FCFCFC`
+- `muted` → `#F5F5F7`
+- `muted-foreground` → `#7E7E8A`
+- `destructive` → `#C53030`
+- `destructive-foreground` → `#FCFCFD`
 
 **UI Elements:**
-- `border` → `#EFEFEF`
-- `input` → `#F5F5F5`
-- `ring` → `#7A6A4D`
+- `border` → `#E8E8EB`
+- `input` → `#F0F0F2`
+- `ring` → `#1E5EBF`
 
 **Chart Colors:**
-- `chart-1` → `#7A6A4D`
-- `chart-2` → `#A88D5E`
-- `chart-3` → `#655841`
-- `chart-4` → `#BAA889`
-- `chart-5` → `#5A4D3A`
+- `chart-1` → `#1E5EBF`
+- `chart-2` → `#3B7DBF`
+- `chart-3` → `#2E7D9A`
+- `chart-4` → `#6B93C4`
+- `chart-5` → `#2A3F9E`
 
 **Sidebar Colors:**
-- `sidebar` → `#3A3A41`
-- `sidebar-foreground` → `#F5F5F5`
-- `sidebar-primary` → `#A88D5E`
-- `sidebar-primary-foreground` → `#FCFCFC`
-- `sidebar-accent` → `#4A4A52`
-- `sidebar-accent-foreground` → `#F5F5F5`
-- `sidebar-border` → `#454549`
-- `sidebar-ring` → `#A88D5E`
+- `sidebar` → `#292933`
+- `sidebar-foreground` → `#F5F5F7`
+- `sidebar-primary` → `#3B7DBF`
+- `sidebar-primary-foreground` → `#FCFCFD`
+- `sidebar-accent` → `#383842`
+- `sidebar-accent-foreground` → `#F5F5F7`
+- `sidebar-border` → `#33333D`
+- `sidebar-ring` → `#3B7DBF`
 
 #### Step 3: Add Dark Mode Colors
 
 In "Colors - Dark" collection, create the same variables with dark values:
 
 **Semantic Colors:**
-- `background` → `#272320`
-- `foreground` → `#F5F5F4`
-- `card` → `#312D28`
-- `card-foreground` → `#F5F5F4`
-- `popover` → `#312D28`
-- `popover-foreground` → `#F5F5F4`
+- `background` → `#1F1F28`
+- `foreground` → `#F5F5F7`
+- `card` → `#28282F`
+- `card-foreground` → `#F5F5F7`
+- `popover` → `#28282F`
+- `popover-foreground` → `#F5F5F7`
 
 **Brand Colors:**
-- `primary` → `#B39668`
-- `primary-foreground` → `#272320`
-- `secondary` → `#3F3B36`
-- `secondary-foreground` → `#F5F5F4`
-- `accent` → `#C6A26B`
-- `accent-foreground` → `#272320`
+- `primary` → `#5B8FDB`
+- `primary-foreground` → `#1F1F28`
+- `secondary` → `#363640`
+- `secondary-foreground` → `#F5F5F7`
+- `accent` → `#52A3C4`
+- `accent-foreground` → `#1F1F28`
 
 **State Colors:**
-- `muted` → `#3F3B36`
-- `muted-foreground` → `#9A9691`
-- `destructive` → `#A34E3A`
-- `destructive-foreground` → `#F5F5F4`
+- `muted` → `#363640`
+- `muted-foreground` → `#9999A6`
+- `destructive` → `#C53030`
+- `destructive-foreground` → `#F5F5F7`
 
 **UI Elements:**
-- `border` → `#3F3B36`
-- `input` → `#3F3B36`
-- `ring` → `#B39668`
+- `border` → `#363640`
+- `input` → `#363640`
+- `ring` → `#5B8FDB`
 
 **Chart Colors:**
-- `chart-1` → `#B39668`
-- `chart-2` → `#C6A26B`
-- `chart-3` → `#D4B482`
-- `chart-4` → `#DEC89A`
-- `chart-5` → `#9F7F52`
+- `chart-1` → `#5B8FDB`
+- `chart-2` → `#52A3C4`
+- `chart-3` → `#70B8D6`
+- `chart-4` → `#4775BF`
+- `chart-5` → `#3658B8`
 
 **Sidebar Colors:**
-- `sidebar` → `#312D28`
-- `sidebar-foreground` → `#F5F5F4`
-- `sidebar-primary` → `#B39668`
-- `sidebar-primary-foreground` → `#272320`
-- `sidebar-accent` → `#3F3B36`
-- `sidebar-accent-foreground` → `#F5F5F4`
-- `sidebar-border` → `#3F3B36`
-- `sidebar-ring` → `#B39668`
+- `sidebar` → `#28282F`
+- `sidebar-foreground` → `#F5F5F7`
+- `sidebar-primary` → `#5B8FDB`
+- `sidebar-primary-foreground` → `#1F1F28`
+- `sidebar-accent` → `#363640`
+- `sidebar-accent-foreground` → `#F5F5F7`
+- `sidebar-border` → `#363640`
+- `sidebar-ring` → `#5B8FDB`
 
 #### Step 4: Set Up Modes
 1. In the Variables panel, set up "Light" and "Dark" modes

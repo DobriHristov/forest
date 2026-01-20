@@ -14,10 +14,10 @@ Complete visual design guide for implementing the design system in Figma.
 - Maintain consistent component patterns across the application
 - Follow established interaction patterns
 
-### 3. Warmth & Professionalism
-- Warm neutral color palette with earthy tones
-- Professional and approachable aesthetic
-- Subtle, refined details
+### 3. Professional & Corporate
+- Cool blue color palette for trust and stability
+- Corporate and authoritative aesthetic
+- Clean, crisp details
 
 ### 4. Responsive & Adaptive
 - Mobile-first approach
@@ -364,7 +364,7 @@ Transform: scale(0.95) → scale(1)
 - Don't use small text for important content
 - Don't create inaccessible color combinations
 - Don't animate without purpose
-- Don't use purple/indigo (unless requested)
+- Don't use warm/earthy tones (use cool blues and grays)
 
 ## File Organization in Figma
 

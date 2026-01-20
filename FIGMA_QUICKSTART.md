@@ -51,24 +51,24 @@ This package includes 5 comprehensive documentation files:
 
 ### Light Mode - Primary Colors
 ```
-Primary: #7A6A4D
-Primary Foreground: #FCFCFC
-Secondary: #F7F7F6
-Accent: #A88D5E
-Background: #FCFCFC
-Foreground: #2E2E2E
-Border: #EFEFEF
+Primary: #1E5EBF (Professional Blue)
+Primary Foreground: #FCFCFD
+Secondary: #F5F5F7
+Accent: #3B7DBF (Light Blue)
+Background: #FCFCFD
+Foreground: #3A3A42
+Border: #E8E8EB
 ```
 
 ### Dark Mode - Primary Colors
 ```
-Primary: #B39668
-Primary Foreground: #272320
-Secondary: #3F3B36
-Accent: #C6A26B
-Background: #272320
-Foreground: #F5F5F4
-Border: #3F3B36
+Primary: #5B8FDB (Bright Blue)
+Primary Foreground: #1F1F28
+Secondary: #363640
+Accent: #52A3C4 (Sky Blue)
+Background: #1F1F28
+Foreground: #F5F5F7
+Border: #363640
 ```
 
 ## Typography Setup (Copy & Paste)
@@ -271,9 +271,9 @@ After basic setup:
 
 ### Most Used Colors
 ```
-Primary: #7A6A4D (light) / #B39668 (dark)
-Background: #FCFCFC (light) / #272320 (dark)
-Border: #EFEFEF (light) / #3F3B36 (dark)
+Primary: #1E5EBF (light) / #5B8FDB (dark)
+Background: #FCFCFD (light) / #1F1F28 (dark)
+Border: #E8E8EB (light) / #363640 (dark)
 ```
 
 ### Most Used Spacing
