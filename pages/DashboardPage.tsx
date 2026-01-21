@@ -3,7 +3,7 @@ export function DashboardPage() {
     <main className="flex-1 overflow-auto bg-slate-50 dark:bg-slate-800">
       <div className="p-4 lg:p-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Табло</h1>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Табло dodo</h1>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Общ преглед на системата</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

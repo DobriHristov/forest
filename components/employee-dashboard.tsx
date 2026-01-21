@@ -464,7 +464,7 @@ export function EmployeeDashboard() {
       },
       children: [
         {
-          label: "Клиенти",
+          label: "Клиенти додо",
           active: currentView === "clients-list",
           onClick: () => setCurrentView("clients-list"),
         },
